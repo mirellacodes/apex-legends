@@ -11,12 +11,12 @@ import { getAllCharacters, getCharacterbyID } from "../models/index";
 
 // CRUD
 
-/* GET all characters. (C) */
+/* GET all characters. (R) */
 app.get("/characters", function (req, res) {
   res.json({ success: true, payload: getAllCharacters() });
 });
 
-// GET a character by (ID)
+// GET a character by ID (R)
 app.get("/characters/:id", function (req, res) {
   let id = Number(req.params.id);
   res.json({ success: true, payload: getCharacterbyID(id) });
