@@ -1,15 +1,17 @@
-type Tdata = {
-  character: string;
-  realName: string;
-  age: number | string;
-  homeWorld: string;
-  tacticalAbility: string;
-  passiveAbility: string;
-  ultimateAbility: string;
+export type Tdata = {
+  id: number;
+  character?: string;
+  realName?: string;
+  age?: number | string;
+  homeWorld?: string;
+  tacticalAbility?: string;
+  passiveAbility?: string;
+  ultimateAbility?: string;
 }[];
 
-const data: Tdata = [
+export const data: Tdata = [
   {
+    id: 1,
     character: "BloodHound",
     realName: "Unknown",
     age: "Unknown",
@@ -19,6 +21,7 @@ const data: Tdata = [
     ultimateAbility: "Beast of the Hunt",
   },
   {
+    id: 2,
     character: "Gibraltar",
     realName: "Makoa Gibraltar",
     age: 30,
@@ -28,6 +31,7 @@ const data: Tdata = [
     ultimateAbility: "Defensive Bombardment",
   },
   {
+    id: 3,
     character: "Lifeline",
     realName: "	Ajay Che",
     age: 24,
@@ -38,6 +42,7 @@ const data: Tdata = [
   },
 
   {
+    id: 4,
     character: "Pathfinder",
     realName: "MRVN",
     age: "Unknown",
@@ -48,6 +53,7 @@ const data: Tdata = [
   },
 
   {
+    id: 5,
     character: "Wraith",
     realName: "Renne Blasey",
     age: 32,
@@ -58,6 +64,7 @@ const data: Tdata = [
   },
 
   {
+    id: 6,
     character: "Bangalore",
     realName: "Anita Williams",
     age: 38,
@@ -68,6 +75,7 @@ const data: Tdata = [
   },
 
   {
+    id: 7,
     character: "Caustic",
     realName: "	Alexander Nox",
     age: 48,
@@ -77,5 +85,3 @@ const data: Tdata = [
     ultimateAbility: "Nox Gas Grenade",
   },
 ];
-
-export default data;
