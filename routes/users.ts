@@ -1,7 +1,11 @@
 import express from "express";
 import app from ".";
 const router = express.Router();
-import { getAllCharacters, getCharacterbyID } from "../models/index";
+import {
+  getAllCharacters,
+  getCharacterbyID,
+  createCharacter,
+} from "../models/index";
 
 // Check if port is listening...
 
@@ -22,4 +26,10 @@ app.get("/characters/:id", function (req, res) {
   res.json({ success: true, payload: getCharacterbyID(id) });
 });
 
-export default router;
+// Create a character (C)
+
+app.post("/characters/:id", function (req, res) {
+  let id = Number(req.params.id);
+  const characterCreated = createCharacter(id, req.body);
+  res.json({ success: true, payload: characterCreated });
+});

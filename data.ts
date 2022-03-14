@@ -1,5 +1,5 @@
 export type Tdata = {
-  id: number;
+  id?: number;
   character?: string;
   realName?: string;
   age?: number | string;
@@ -7,9 +7,9 @@ export type Tdata = {
   tacticalAbility?: string;
   passiveAbility?: string;
   ultimateAbility?: string;
-}[];
+};
 
-export const data: Tdata = [
+export const data: Tdata[] = [
   {
     id: 1,
     character: "BloodHound",
