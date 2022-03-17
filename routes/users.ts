@@ -28,8 +28,9 @@ app.get("/characters/:id", function (req, res) {
 
 // Create a character (C)
 
-app.post("/characters/:id", function (req, res) {
-  let id = Number(req.params.id);
-  const characterCreated = createCharacter(id, req.body);
+app.post("/characters", function (req, res) {
+  const characterCreated = createCharacter(req.body);
   res.json({ success: true, payload: characterCreated });
 });
+
+export default app;

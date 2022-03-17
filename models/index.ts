@@ -22,16 +22,9 @@ export function getCharacterbyID(id: number): Tdata | undefined {
 }
 
 // create a character
-export function createCharacter(
-  newCharacter: Tdata,
-  id: number
-): Tdata | undefined {
+export function createCharacter(newCharacter: Tdata) {
   // get all the character and add it in the data
   // so far this replaces but not add.
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].id === id) {
-      return data[i];
-    }
-    return data[i];
-  }
+  data.push(newCharacter);
+  return data[data.length - 1];
 }
