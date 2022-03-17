@@ -24,7 +24,17 @@ export function getCharacterbyID(id: number): Tdata | undefined {
 // create a character
 export function createCharacter(newCharacter: Tdata) {
   // get all the character and add it in the data
-  // so far this replaces but not add.
   data.push(newCharacter);
   return data[data.length - 1];
+}
+
+// update a character by ID
+export function updateCharacter(id: number, updatedCharacter: Tdata) {
+  // we need to find the position of the id
+  // match the selected id with the character id
+  // update it
+  const foundIndex = data.findIndex(function (character) {
+    return character.id === id;
+  });
+  return (data[foundIndex] = updatedCharacter);
 }

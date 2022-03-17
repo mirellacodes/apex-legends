@@ -1,10 +1,12 @@
 import express from "express";
 import app from ".";
+import { Tdata } from "../data";
 const router = express.Router();
 import {
   getAllCharacters,
   getCharacterbyID,
   createCharacter,
+  updateCharacter,
 } from "../models/index";
 
 // Check if port is listening...
@@ -34,3 +36,11 @@ app.post("/characters", function (req, res) {
 });
 
 export default app;
+
+// Update the character by ID
+
+app.patch("/characters/:id", function (req, res) {
+  let id = Number(req.params.id);
+  const updated = updateCharacter(id, req.body);
+  res.json({ success: true, payload: updated });
+});
